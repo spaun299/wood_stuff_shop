@@ -46,11 +46,6 @@ define('port', default=8080, type=int, help='Application server port')
 
 def start_app():
     parse_command_line()
-    print(options.db_name,
-                                  options.db_user_name,
-                                  options.db_host,
-                                  options.db_port,
-                                  options.db_password)
     app = Application()
     http_server = tornado.httpserver.HTTPServer(app, xheaders=True)
     http_server.listen(options.port, options.host)

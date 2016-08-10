@@ -9,7 +9,7 @@ name VARCHAR(300) NOT NULL UNIQUE,position INT DEFAULT 1);
 CREATE SEQUENCE id_product;
 CREATE TABLE product(id INT NOT NULL DEFAULT nextval('id_product') UNIQUE, subdivision_id INT NOT NULL REFERENCES subdivision(id),
 name VARCHAR(300) NOT NULL UNIQUE, price INT NOT NULL, description VARCHAR(1000) NOT NULL, short_description VARCHAR(250) NOT NULL,
-bought_count INT DEFAULT 0,viewed INT DEFAULT 0, sale BOOLEAN DEFAULT FALSE, last_bought TIMESTAMP WITHOUT TIME ZONE, cr_rm TIMESTAMP WITHOUT TIME ZONE,
+bought_count INT DEFAULT 0,viewed INT DEFAULT 0, sale BOOLEAN DEFAULT FALSE, last_bought TIMESTAMP WITHOUT TIME ZONE, cr_tm TIMESTAMP WITHOUT TIME ZONE,
 identifier VARCHAR(50) UNIQUE);
 CREATE SEQUENCE id_sale;
 CREATE TABLE sale(id INT PRIMARY KEY NOT NULL DEFAULT nextval('id_sale') UNIQUE, product_id INT NOT NULL REFERENCES product(id) UNIQUE,
@@ -26,3 +26,6 @@ CREATE SEQUENCE id_custumer_product;
 CREATE TABLE custumer_product(id INT PRIMARY KEY DEFAULT nextval('id_custumer_product'),
 custumer_id INT REFERENCES custumer(id) NOT NULL, product_id INT REFERENCES product(id) NOT NULL,
   amount INT NOT NULL, money_cost INT NOT NULL, cr_tm TIMESTAMP WITHOUT TIME ZONE, price_type VARCHAR(30) DEFAULT 'retail');
+CREATE TRIGGER cr_tm_trigger BEFORE INSERT ON product FOR EACH ROW EXECUTE PROCEDURE time_before_insert_column();
+CREATE TRIGGER cr_tm_trigger BEFORE INSERT ON custumer FOR EACH ROW EXECUTE PROCEDURE time_before_insert_column();
+CREATE TRIGGER cr_tm_trigger BEFORE INSERT ON custumer_product FOR EACH ROW EXECUTE PROCEDURE time_before_insert_column();
