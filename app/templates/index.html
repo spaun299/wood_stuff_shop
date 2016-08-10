@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+        <div id="content" class="float_r">
+        	<div id="slider-wrapper">
+                <div id="slider" class="nivoSlider">
+                    <img src="{{static_url('images/slider/02.jpg')}}" alt="" />
+                    <a href="#"><img src="{{static_url('images/slider/01.jpg')}}" alt="" title="Оптові та роздрібні ціни" /></a>
+                    <img src="{{static_url('images/slider/03.jpg')}}" alt="" />
+                    <img src="{{static_url('images/slider/04.jpg')}}" alt="" title="#htmlcaption" />
+                </div>
+                <div id="htmlcaption" class="nivo-html-caption">
+                    <strong>Всі</strong> вироби <em>ручної</em> роботи.
+                </div>
+            </div>
+            <script type="text/javascript" src="{{static_url('js/jquery.nivo.slider.pack.js')}}"></script>
+            <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+            </script>
+        	<h1>Нові товари</h1>
+            <div class="product_box">
+	            <h3>Юла</h3>
+            	<a href="productdetail.html"><img src="{{static_url('images/product/01.png')}}" height="100px" alt="Shoes 1" /></a>
+                <p>Деревянная юла. Игрушка для детей. Развивает координацию.</p>
+                <p class="product_price">100грн</p>
+                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="productdetail.html" class="detail"></a>
+            </div>
+            <div class="product_box">
+            	<h3>Вказівник</h3>
+            	<a href="productdetail.html"><img src="{{static_url('images/product/02.png')}}"  height="116px" alt="Shoes 2" /></a>
+                <p>Деревянная указка</p>
+              <p class="product_price">80грн</p>
+                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="productdetail.html" class="detail"></a>
+            </div>
+            <div class="product_box no_margin_right">
+            	<h3>Щит</h3>
+            	<a href="productdetail.html"><img src="{{static_url('images/product/03.png')}}"  height="84px" alt="Shoes 3" /></a>
+                <p>Деревянный защитный щит. Аксессуар который хорошо сочетаются с деревянными мечями..</p>
+              <p class="product_price">60грн</p>
+                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="productdetail.html" class="detail"></a>
+            </div>
+
+            <div class="cleaner"></div>
+
+<div class="product_box">
+            	<h3>Гвинтівка</h3>
+           	<a href="productdetail.html"><img src="{{static_url('images/product/04.png')}}"  height="116px" alt="Shoes 4" /></a>
+            <p>Деревянное ружьё, изготовлена из карпатского бука. Эко игрушка.04</p>
+      <p class="product_price">220грн</p>
+                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="productdetail.html" class="detail"></a>
+            </div>
+            <div class="product_box">
+	            <h3>Бочка сувенірна</h3>
+            	<a href="productdetail.html"><img src="{{static_url('images/product/05.png')}}"  height="100px" alt="Shoes 5" /></a>
+                <p>Сувенирная бочка из натурального дерева декорирована изящной резьбой.</p>
+              <p class="product_price">180грн</p>
+                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="productdetail.html" class="detail"></a>
+            </div>
+            <div class="product_box no_margin_right">
+            	<h3>Заготовка Пастух</h3>
+            	<a href="productdetail.html"><img src="{{static_url('images/product/06.png')}}"  height="116px" alt="Shoes 6" /></a>
+                <p>Деревянная заготовка для творчества, пастушок.</p>
+                <p class="product_price">60грн</p>
+                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="productdetail.html" class="detail"></a>
+            </div>
+        </div>
+    {% end %}

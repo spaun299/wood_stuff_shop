@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% include 'header.html' %}
+<body>
+
+<div id="templatemo_body_wrapper">
+<div id="templatemo_wrapper">
+{% include 'menubar.html' %}
+    <div id="templatemo_main">
+{% include 'sidebar.html' %}
+{% block content %}{% end %}
+        <div class="cleaner"></div>
+    </div>
+    {% include 'footer.html' %}
+</div>
+</div>
+</body>
+</html>
